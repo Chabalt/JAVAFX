@@ -18,21 +18,20 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage; 
 
 public class Main extends Application {
+	public static SceneLoader screneloader;
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
 			
-		    Parent root = FXMLLoader.load(getClass().getResource("Views/TestView.fxml"));
-		    
-			Scene scene = new Scene(root,800,600);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		    primaryStage.setTitle("TEST SA MERE"); 
-			primaryStage.setScene(scene);
+			screneloader = new SceneLoader(primaryStage);
+			screneloader.switchTo(SceneLoader.SCENE_TITLE);
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	public static void main(String[] args) {
 		launch(args);
