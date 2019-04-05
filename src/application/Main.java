@@ -1,6 +1,8 @@
 package application;
 	
 import java.io.FileInputStream;
+
+import application.Models.ScoreModel;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -27,6 +29,11 @@ public class Main extends Application {
 			screneloader = new SceneLoader(primaryStage);
 			screneloader.switchTo(SceneLoader.SCENE_TITLE);
 			primaryStage.show();
+			DataBase.getInstance();
+			ScoreModel.createTable();
+			ScoreModel.insert(new ScoreModel(1,28));
+			System.out.println(ScoreModel.listAll());
+			
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
