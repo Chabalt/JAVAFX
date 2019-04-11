@@ -30,7 +30,7 @@ public class FXMLModelTitleStage {
 
 	@FXML
 	private Button btnGoStageGame;
-
+	
 	@FXML
 	void switchToGame(ActionEvent event) {
 		try {
@@ -40,5 +40,5 @@ public class FXMLModelTitleStage {
 			e.printStackTrace();
 		}
 	}
-
+	
 }
